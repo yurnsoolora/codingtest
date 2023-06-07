@@ -8,13 +8,8 @@ class Solution {
             gob = gob * num_list[i];
             hap = hap + num_list[i];
         
-            if (gob > (hap*hap)) {
-                answer = 0;
-            }
-            else if (gob < (hap*hap)) {
-                answer = 1;
-            }
         }
+        answer = gob > (hap*hap) ? 0 : 1;
         return answer;
     }
 }
