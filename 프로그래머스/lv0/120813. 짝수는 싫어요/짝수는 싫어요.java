@@ -1,11 +1,14 @@
+import java.util.*;
+
 class Solution {
-    public int[] solution(int n) {
-        int[] answer = new int[(n%2==0) ? (n/2) : (n/2+1)];
-        
-        int index=0;
-        for (int i=1; i<=n; i+=2) {
-            answer[index++] = i;
+    public ArrayList solution(int n) {
+        ArrayList<Integer> answer = new ArrayList<Integer>(); 
+        //배열의 길이를 지정해주기 귀찮을때 -> 냅다 arraylist 선언!
+
+        for(int i=1; i<=n; i+=2){
+              answer.add(i);
         }
+
         return answer;
     }
 }
