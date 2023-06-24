@@ -1,3 +1,2 @@
 # codingtest
-#fighting
-ghㅇㅜㅇㅜㄴㅜㅇㅜ
+6/24
