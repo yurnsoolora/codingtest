@@ -3,11 +3,13 @@ class Solution {
         int answer = 0;
         int len = p.length();
         
-        for (int i=0; i<t.length()-(len-1); i++) {
-            if ((Long.parseLong(t.substring(i, i+len))) <= Long.parseLong(p)) {
+        for (int i = 0; i <= t.length() - len; i++) {
+            String substring = t.substring(i, i + len);
+            if (substring.compareTo(p) <= 0) {
                 answer++;
             }
         }
+        
         return answer;
     }
 }
