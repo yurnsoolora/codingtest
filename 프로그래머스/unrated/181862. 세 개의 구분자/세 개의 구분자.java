@@ -1,30 +1,28 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 class Solution {
     public String[] solution(String myStr) {
-        List<String> result = new ArrayList<>();
-
-        StringBuilder current = new StringBuilder();
-        for (char c : myStr.toCharArray()) {
-            if (c == 'a' || c == 'b' || c == 'c') {
-                if (current.length() > 0) {
-                    result.add(current.toString());
-                    current = new StringBuilder();
-                }
-            } else {
-                current.append(c);
+       
+        myStr = myStr.replace("a", " ").replace("b", " ").replace("c", " ");
+        String[] str = myStr.split(" ");
+        
+        ArrayList<String> list = new ArrayList<>();
+        
+        for (int i=0; i<str.length; i++) {
+            if (!str[i].equals("")) {
+                list.add(str[i]);
             }
         }
-
-        if (current.length() > 0) {
-            result.add(current.toString());
+        
+        if (list.size() == 0) {
+            list.add("EMPTY");
         }
-
-        if (result.isEmpty()) {
-            return new String[]{"EMPTY"};
-        } else {
-            return result.toArray(new String[0]);
+        
+        String[] answer = new String[list.size()];
+        int idx=0;
+        for (int i=0; i<list.size(); i++) {
+            answer[idx++] = list.get(i);
         }
+        return answer;
     }
 }
